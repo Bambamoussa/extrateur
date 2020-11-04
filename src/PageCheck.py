@@ -22,11 +22,18 @@ class PageCheck:
         regex1=self.url.split(":")
         regex=" ".join(regex1)
         if(regex.startswith("https")==False):
-            urlp="https://" + self.url
-            print(urlp)
+            urlp="https://en.wikipedia.org/wiki/"+ self.url
+            
         elif(self.pageExiste()):
             urlp=self.url
-            
+        else:
+            urlp=" "    
         return urlp
+     
 
+    def urlChekFile(self):
+        urlp="https://en.wikipedia.org/wiki/"+self.url
+            
+           
+        return urlp 
  

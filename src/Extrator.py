@@ -33,7 +33,6 @@ class Extractor:
     
     def getTableHeader(self):
         wiki=self.url
-        #wiki = "https://en.wikipedia.org/wiki/International_Phonetic_Alphabet_chart_for_English_dialects"
         header = {
             'User-Agent': 'Mozilla/5.0'
         }  # Needed to prevent 403 error on Wikipedia
@@ -90,7 +89,4 @@ class Extractor:
 
             # write data out to tab seperated format
             self.saveCSV(page,tn,nrows,data)
-    
-e=Extractor("https://en.wikipedia.org/wiki/International_Phonetic_Alphabet_chart_for_English_dialects")
-e.extraction()
         
