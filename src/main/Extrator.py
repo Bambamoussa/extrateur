@@ -40,7 +40,7 @@ class Extractor:
         soup = BeautifulSoup(page.content)
         tables = soup.findAll("table", {"class": "wikitable"})
         return tables,page
-
+    
     def HtmlTable(self,rows,data):
         for i in range(len(rows)):
             row = rows[i]
@@ -67,12 +67,12 @@ class Extractor:
 
             data.append(rowD)
        
-
+     # preinit list of lists
     def getListable(self,page,tables):
          
         for tn, table in enumerate(tables):
 
-            # preinit list of lists
+            
             rows = table.findAll("tr")
             row_lengths = [len(r.findAll(['th', 'td'])) for r in rows]
             ncols = max(row_lengths)
@@ -91,8 +91,15 @@ class Extractor:
             # write data out to tab seperated format
             self.saveCSV(page,tn,nrows,data)
 
+    #compter le nombre de  tableaux dans une page wikipedia
+    def countTable(self,url):
+        page = requests.get(url)
+        TestExtrat = BeautifulSoup(page.content)
+        Tables = TestExtrat.find_all('table',class_='wikitable')
+        print(len(Tables))
+        return len(Tables)
 
-#p=Extractor("https://fr.wikipedia.org/wiki/Comparateur_de_prix")
-
+p=Extractor("https://fr.wikipedia.org/wiki/Mairie_de_Rennes")
+p.countTable("https://fr.wikipedia.org/wiki/Mairie_de_Rennes")
  
  

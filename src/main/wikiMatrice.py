@@ -14,6 +14,7 @@ class wikiMatrice:
         if(page.urlChek()!=" "):
             extract=Extractor(url)
             extract.extraction()
+            print("le nombre de tableau est {} ".format(extract.countTable(url)))
         else:
             print("l'url n\' est pas valide")
 
@@ -27,6 +28,7 @@ class wikiMatrice:
             if(url!=" "):
                 extract=Extractor(url)
                 extract.extraction()
+                print("le nombre de tableau est {} ".format(extract.countTable(url)))
             else:
                 print("l'url n\' est pas valide") 
             

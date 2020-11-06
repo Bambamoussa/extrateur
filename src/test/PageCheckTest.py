@@ -1,5 +1,6 @@
 
 from src.main.PageCheck import *
+from src.main.Extrator import *
     
 import unittest
 
@@ -22,8 +23,11 @@ class PageCheckTest(unittest.TestCase):
         b="https://en.wikipedia.org/wiki/Comparateur_de_prix"
         self.assertEqual(resultat,b)
         
+     #Testez le nombres des tableaux
+    def countTableTest(self): 
+        extrat=Extractor("https://fr.wikipedia.org/wiki/Mairie_de_Rennes")
+        nbTable=extrat.countTable("https://fr.wikipedia.org/wiki/Mairie_de_Rennes")
+        TestNb = len(nbTable)    
+        self.assertEqual(TestNb,2)
  
-
-P=PageCheckTest()
-P.urlCheckTest()
 
