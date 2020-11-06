@@ -19,7 +19,7 @@ class Extractor:
        
              
 
-
+   #save of files csv
     def saveCSV(self,page,tn,nrows,data):
         fname = 'output_{}_t{}.csv'.format(page, tn)
         f = codecs.open(fname, 'w')
@@ -66,9 +66,10 @@ class Extractor:
                         print(cell.text)
 
             data.append(rowD)
-
+       
 
     def getListable(self,page,tables):
+         
         for tn, table in enumerate(tables):
 
             # preinit list of lists
@@ -89,4 +90,9 @@ class Extractor:
 
             # write data out to tab seperated format
             self.saveCSV(page,tn,nrows,data)
-        
+
+
+#p=Extractor("https://fr.wikipedia.org/wiki/Comparateur_de_prix")
+
+ 
+ 

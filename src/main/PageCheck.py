@@ -30,11 +30,4 @@ class PageCheck:
             urlp=" "    
         return urlp
      
-
-    def urlChekFile(self):
-        
-        urlp="https://en.wikipedia.org/wiki/"+ self.url
-            
-           
-        return urlp 
- 
+   
